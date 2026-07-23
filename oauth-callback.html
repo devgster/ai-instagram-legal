@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>인증 콜백 — 잡식 매거진</title>
+<style>
+  body { max-width: 640px; margin: 60px auto; padding: 0 20px;
+    font-family: -apple-system, "Apple SD Gothic Neo", Pretendard, sans-serif; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; }
+  .code { font-family: ui-monospace, Menlo, monospace; background: #f2f4f6; padding: 14px 16px;
+    border-radius: 8px; word-break: break-all; font-size: 15px; margin: 14px 0; border: 1px solid #e5e8eb; }
+  button { padding: 10px 16px; font-size: 15px; border: 1px solid #333; background: #fff;
+    border-radius: 8px; cursor: pointer; }
+  .muted { color: #777; font-size: 14px; }
+  .err { color: #c0392b; }
+</style>
+</head>
+<body>
+  <h1>Instagram 인증 콜백</h1>
+  <p>아래 <b>인증 코드(code)</b>를 복사해서, 실행 중인 인증 도구(<code>ig_authorize.py</code>)에 붙여넣으세요.</p>
+  <div class="code" id="code">코드를 읽는 중…</div>
+  <button id="copy">코드 복사</button>
+  <p class="muted">이 페이지는 인증 코드를 보여주기만 합니다. 코드는 몇 분 뒤 만료되니 바로 사용하세요.</p>
+  <script>
+    var params = new URLSearchParams(location.search);
+    var code = params.get("code");
+    var err = params.get("error") || params.get("error_description");
+    var box = document.getElementById("code");
+    if (code) { box.textContent = code; }
+    else if (err) { box.textContent = "오류: " + err; box.className = "code err"; }
+    else { box.textContent = "코드가 없습니다. 인증을 다시 시도하세요."; box.className = "code err"; }
+    document.getElementById("copy").onclick = function () {
+      if (code) navigator.clipboard.writeText(code).then(function(){ this && (this.textContent="복사됨"); }.bind(this));
+    };
+  </script>
+</body>
+</html>
