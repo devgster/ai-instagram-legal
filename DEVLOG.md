@@ -24,3 +24,4 @@
 - 2026-10-18: EP19 핫초코 이별편의 01–09 컷 번호가 표시된 약 40초 휴대폰 검수본을 `vid/whereis-ep19-breakup-numbered-review-20261018/`에 게시. 본편 검수용이며 채널 업로드 대기에는 넣지 않았다.
 - 2026-10-18: EP19 03·04 영상 컷의 키프레임 중복 지적에 따라 새 구도의 수정 후보 2장을 `vid/whereis-ep19-breakup-s03-s04-keyframes-v2-20261018/`에 게시. 영상 재생성 전 검수용이다.
 - 2026-10-18: 03컷의 두 배우가 카메라 쪽을 보고 남성만 말해야 한다는 수정 지시를 반영한 키프레임을 `vid/whereis-ep19-breakup-s03-keyframe-v3-20261018/`에 게시. 영상 재발주 전 검수용이다.
+- 2026-10-18: 12시 EP18 붕어빵 편의 YouTube 게시 성공·Instagram 게시 누락을 확인했다. 기존 `pick.devgster.com` 미디어 URL이 응답하지 않아 Instagram 재시도용 원본 영상·썸네일을 SHA 검증 후 `vid/whereis-ep18-rofan-native-20261018/`에 호스팅했다.
