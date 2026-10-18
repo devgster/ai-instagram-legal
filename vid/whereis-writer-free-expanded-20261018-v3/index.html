@@ -1,0 +1,395 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>막장 숏드라마 · 장르 확장 자유 기획 비교 3차</title><style>
+:root{--paper:#f5f2eb;--ink:#25211c;--muted:#6d655b;--line:#d7d0c5;--accent:#87402f}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.85 "Apple SD Gothic Neo","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}main{max-width:900px;padding:32px 24px 80px;margin:auto}header{border-bottom:2px solid var(--ink);padding:8px 0 24px}.eyebrow,.label{color:var(--accent);font-size:14px;font-weight:700}.page-title{font-family:"AppleMyungjo","Noto Serif KR",serif;font-size:36px;line-height:1.35;margin:14px 0 18px}.meta{font-size:14px;color:var(--muted)}nav{display:flex;gap:10px;position:sticky;top:0;background:var(--paper);padding:10px 0;border-bottom:1px solid var(--line);z-index:3}nav a{min-height:48px;min-width:64px;display:flex;align-items:center;justify-content:center;padding:6px 20px;border:1px solid var(--line);text-decoration:none;color:var(--ink);font-weight:700;background:#fffdf8}a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}html{scroll-padding-top:80px}section{padding:34px 0;border-bottom:1px solid var(--line)}section>h2{font-size:28px;margin:4px 0 20px}.manuscript h3{font-size:25px;line-height:1.5;margin:26px 0 16px}.manuscript h4{font-size:21px;margin:26px 0 12px}.manuscript h5,.manuscript h6{font-size:18px;margin:24px 0 8px}.manuscript p{margin:0 0 14px}.manuscript .bullet{padding-left:16px;text-indent:-14px}.manuscript blockquote{margin:18px 0;padding:0 18px;font-size:20px;font-weight:600}.manuscript hr{border:0;border-top:1px solid var(--line);margin:28px 0}.manuscript code{font-size:.88em;background:#eae4d9;padding:2px 4px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.8 ui-monospace,monospace;background:#ebe5da;padding:18px}details{margin:20px 0}summary{min-height:46px;cursor:pointer;font-weight:700;padding:8px 0}table{border-collapse:collapse;width:100%;font-size:15px}th,td{text-align:left;padding:12px 10px;vertical-align:top;border-bottom:1px solid var(--line)}th{background:#ebe5da}.table-wrap{margin:20px 0}footer{padding:30px 0}.notice{padding:16px 18px;background:#ebe5da;font-size:15px;margin:18px 0}@media(max-width:650px){main{padding:24px 18px 60px}.page-title{font-size:31px}table,tbody,tr,td{display:block}thead{display:none}tr{padding:12px 0;border-bottom:1px solid var(--line)}td{border:0;padding:5px 0}td::before{content:attr(data-label);display:block;font-size:12px;color:var(--muted);font-weight:700}.manuscript h3{font-size:23px}.manuscript blockquote{font-size:19px;margin-left:0;padding-left:12px}}@media print{nav{position:static}section.candidate{break-before:page}body{font-size:12pt}}
+</style></head><body><main><header><div class="eyebrow">그거 어디서 삼? · 작가 자유 기획 3차</div><h1 class="page-title">확장된 장르와 클리셰로,<br>다시 자유롭게.</h1><p>채널 소개와 참고자료만 전달했습니다. 클리셰·제품·인물·배경·반전·분량·컷 수는 지정하지 않았습니다. 각 모델이 독립적으로 작성한 원문이며, 이전 대본이나 다른 모델의 결과는 제공하지 않았습니다.</p><p class="meta">세 원고의 내용과 형식은 그대로 두고 글꼴과 표시 방식만 통일했습니다. 기기 내부 파일 경로는 참고자료 이름만 표시했습니다. A/B/C는 이번에 새로 무작위 배정했으며 이전 비교의 모델 순서와 무관합니다.</p></header><nav aria-label="원고 바로가기"><a href="#A">A안</a><a href="#B">B안</a><a href="#C">C안</a></nav><details><summary>세 모델에 실제 전달한 지시 보기</summary><pre>우리 채널은 막장 숏드라마 콘텐츠를 제작하는 채널입니다.
+
+아래 참고자료를 자유롭게 참고해서, 클리셰 선택부터 제품 선정, 시나리오, 완성 대본까지 완전히 자유롭게 기획하고 작성해 주세요.
+
+참고자료:
+- references/cliches.json — 기존 막장 클리셰 전체 사전
+- references/shortdrama-cliches.json — 새로 추가된 다양한 장르의 숏드라마 클리셰 사전
+- references/slap-prompt.txt — 따귀 액션 참고 프롬프트
+- references/water-prompt.txt — 물세례 액션 참고 프롬프트
+- references/music.md — 배경음악 자료
+
+한글로 작성해 주세요.
+</pre><p class="meta">기존 막장 클리셰 사전·새 장르 확장 클리셰 사전·따귀·물세례 프롬프트·음악 목록의 동일한 사본에 접근하도록 했습니다. 서로 다른 CLI의 기본 동작과 추론 설정까지 동일한 실험은 아니며, 각 한 편씩의 예비 비교입니다. 한 실행은 인증 재연결 중 지연되어 중단한 뒤 같은 대화에서 '계속 작성해 주세요'로 이어썼습니다. 최종 원고는 그 실행이 만든 문서 산출물에서 읽었습니다. 소재·클리셰·제품 등 창작 조건은 추가하지 않았습니다.</p></details><div class="notice">이번 결과에서도 일부 원고는 인물 관계·배경이 겹칩니다. 공통 과제에서 지정한 것은 아니지만, 액션 참고 프롬프트에 구체적인 배우·공간 묘사가 있어 선택에 영향을 줬을 가능성은 있습니다. 저는 대사·사건·제품을 수정하거나 별점을 매기지 않았습니다. 원고 안의 제품 설명·판매 정보·제작 시간은 작성자의 제안이며 아직 별도 검증하지 않았습니다.</div><section class="candidate" id="A"><div class="label">자유 기획 A안</div><h2>A안 원문</h2><div class="manuscript"><h3>막장 숏드라마 기획·시나리오·완성 대본 제작 계획서 (Implementation Plan)</h3>
+<h4>1. 기획 목표 및 배경 (Goal Description)</h4>
+<p>본 계획서는 채널의 막장 숏드라마 제작을 위해 제공된 5종의 레퍼런스(cliches.json, shortdrama-cliches.json, slap-prompt.txt, water-prompt.txt, music.md)를 유기적으로 결합하여 <strong>① 클리셰 선정 및 위계 설계, ② 막장 서사 일체형 PPL 제품 선정, ③ 단일 밀실 고효율 시나리오, ④ AI 비디오 생성 프롬프트 및 채택 음원 큐시트가 완비된 최종 대본</strong>을 수립하는 것을 목표로 합니다.</p>
+<blockquote>[!IMPORTANT]</blockquote>
+<blockquote><strong>참고자료 규율 및 검증 한계(<code>evidence_limit</code>) 준수 원칙</strong></blockquote>
+<blockquote>1. <strong>근거 한계 명시</strong>: shortdrama-cliches.json 및 cliches.json의 항목들은 제공 자료 기반 추상 장치 및 관습 후보이며, <strong>한국 작품 전반의 반복 전형성 및 흥행 인과는 미검증</strong> 상태입니다. 따라서 본 기획에서는 &quot;흥행이 검증된 공식&quot;이라는 식의 과장된 인과 주장을 배제하고, <strong>60~120초 압축성·시각적 타격감·인과 명료성</strong>에 기반한 편집 판단으로 장치를 선택합니다.</blockquote>
+<blockquote>2. <strong>원작 비복제 원칙</strong>: 사전의 출처 작품(<code>S01</code>~<code>S23</code>)의 고유 대사·인물명·세부 설정·사건 순서는 일절 복제하지 않으며, <code>욕망 → 방해 → 전환 → 결말</code>의 추상 메커니즘만 차용해 새로운 창작 설정으로 설계합니다.</blockquote>
+<blockquote>3. <strong>음원 사용 규율 준수</strong>: music.md 지시에 따라 폐기된 <code>makjang-bgm-7</code> 7곡, 반려된 <code>N01-FURY</code>(대치 격화) 및 <code>F01-TABLE</code>(너무 잔잔함)은 절대 사용하지 않으며, <strong>현재 채택된 8곡</strong>만 사용합니다. 특히 여성 보컬 곡(<code>T3-REVENGE-VOCAL</code>)은 대사 구간과 분리하여 엔딩 복수 선언·워킹 몽타주에만 배치합니다.</blockquote>
+<blockquote>4. <strong>AI 비디오 액션 샷 분리 원칙</strong>: slap-prompt.txt와 water-prompt.txt의 핵심 조건(<code>Both women keep their lips closed in silence</code>, <code>normal real-time speed</code>, <code>&lt;Subject 1&gt;</code> 에메랄드 드레스, <code>&lt;Subject 2&gt;</code> 버건디 드레스, <code>&lt;Subject 3&gt;</code> 호두나무 테이블 응접실)을 대본의 컷 분할과 의상·미술 설정에 1:1로 반영합니다.</blockquote>
+<hr>
+<h4>2. 사용자 검토 및 승인 사항 (User Review Required)</h4>
+<blockquote>[!NOTE]</blockquote>
+<blockquote>아래 기획안과 완성 대본을 검토해 주시고, 승인해 주시면 워크스페이스 내에 최종 산출물 파일(<code>shortdrama-production-package.md</code>)로 저장 및 검증을 진행하겠습니다. 수정하거나 강조하고 싶은 클리셰·제품 카테고리가 있다면 언제든 말씀해 주세요.</blockquote>
+<p class="bullet">• <strong>작품 형태</strong>: 90초 분량의 독립 완결형 파일럿 숏드라마 1편 (<code>MK-0331</code> 독립 쇼츠용 미니 폭로 폐쇄회로 구조 채택, 캐스트 3인 / 단일 로케이션 1곳)</p>
+<p class="bullet">• <strong>선정 PPL 제품</strong>: <strong>『제로페이크(ZERO-FAKE) 원샷 미셀라 클렌징 워터 &amp; 패드』</strong> (초강력 방수 메이크업·특수 분장까지 자극 없이 단 한 번에 지워내는 투명 액상 클렌징 워터)</p>
+<p class="bullet">• <strong>산출물 파일 경로</strong>: <code>[기기 내부 경로]</code></p>
+<hr>
+<h4>3. 상세 기획 및 완성 대본 (Proposed Changes)</h4>
+<p>승인 시 생성될 [NEW] shortdrama-production-package.md의 전체 상세 내용은 다음과 같습니다.</p>
+<hr>
+<h5>Part 1. 클리셰 선택 및 서사 위계 설계</h5>
+<p>shortdrama-cliches.json의 규칙(*&quot;1화(60~120초)에는 핵심 장치 1개만 가동하고, 결합이 필요하면 상위 장치 1개와 하위 비트 1개로 위계를 명시한다. C21·C22 같은 상황 장치를 붙여도 별도 핵심 서사 수로 중복 계산하지 않는다&quot;*)에 따라 아래와 같이 위계를 설계했습니다.</p>
+<pre>flowchart TD
+    subgraph Core[&quot;핵심 상위 서사 장치 (1개 중심 원칙)&quot;]
+        SD003[&quot;SD-003 (C04): 타인의 신분으로 기회를 얻고 정체 유지하기&quot;]
+    end
+
+    subgraph SubBits[&quot;하위 상황 비트 및 단발 개그 (중복 서사 수 미계산)&quot;]
+        SD020[&quot;SD-020 (C22): 비밀 관계를 숨긴 순간 불청객 등장&quot;]
+        SD002[&quot;SD-002 (C02): 연상 문답이 숨긴 친숙함을 드러내기&quot;]
+        GAG001[&quot;GAG-001 (C21): 호칭의 대상을 잘못 알아듣기&quot;]
+    end
+
+    subgraph MakjangLayer[&quot;기존 막장 클리셰 결합 (cliches.json)&quot;]
+        Narrative[&quot;서사·관계·소품: MK-0004(체호프의 총), MK-0008(시어머니 편들기),\nMK-0014·MK-0563(신체 표식·탈부착 얼굴 점), MK-0021·MK-0228(이혼서류·위자료 각서 함정),\nMK-0248·MK-0426(돈 때문에 본인으로 복귀), MK-0331(미니 폭로 폐쇄회로)&quot;]
+        Action[&quot;행동·반응·연출: MK-0333·MK-0521(식탁 물세례), MK-0335(따귀 후 고개 고정),\nMK-0351(진단서로 전제 붕괴), MK-0385(찢은 계약서의 복원),\nMK-0425·MK-0430(상식 담당자의 메타 딴지·아수라장 속 실무자 정상업무)&quot;]
+        Audio[&quot;배경음악·음향 전환: MK-0412·MK-0590(폭로 순간 음악 급정지·음소거 정적),\nMK-0608(소품 탈착 후 본색 테마 전환), MK-0611(서류 타격음 박자 동기화),\nMK-0622(감정 선율 절단과 상거래 효과음 리듬화), MK-0630(폐허 침묵과 여운 종지)&quot;]
+    end
+
+    Core --&gt; SubBits
+    SubBits --&gt; MakjangLayer</pre>
+<h6>1) 신규 숏드라마 사전(shortdrama-cliches.json) 채택 항목 및 근거 한계(<code>evidence_limit</code>) 처리</h6>
+<div class="table-wrap"><table><thead><tr><th>위계 구분</th><th>ID 및 명칭</th><th>작동 원리 (욕망 → 방해 → 전환 → 결말)</th><th>근거 한계(<code>evidence_limit</code>) 및 본작의 창작 설계</th></tr></thead><tbody>
+<tr><td data-label="위계 구분"><strong>핵심 상위 장치 (1개)</strong></td><td data-label="ID 및 명칭"><strong><code>SD-003</code> (<code>C04</code>)</strong>&lt;br&gt;타인의 신분으로 기회를 얻고 정체 유지하기</td><td data-label="작동 원리 (욕망 → 방해 → 전환 → 결말)"><strong>[욕망]</strong> 잠적한 재벌가 약혼녀 대신 대역으로 들어와 체납된 보수를 받으려 함 → <strong>[방해]</strong> 시어머니의 유전자·혈통 점 추궁과 위약금 전가 위협 → <strong>[전환]</strong> 대역 신분을 유지하면 빚을 떠안고, 본래 정체를 밝혀야 위자료 수령권자가 되는 역설 발생 → <strong>[결말]</strong> 스스로 가짜 점을 지워 정체를 복귀하고 실리를 챙김</td><td data-label="근거 한계(`evidence_limit`) 및 본작의 창작 설계"><code>S03</code>·<code>S04</code>·<code>S23</code> 공식 소개 기반 추상화이며 위장 유지 규칙은 미검증. 본작에서는 <strong>&#x27;얼굴의 혈통 점 분장 유지 조건부 대역 계약&#x27;</strong>이라는 독자적 창작 규칙으로 설계함.</td></tr>
+<tr><td data-label="위계 구분"><strong>하위 상황 비트 1</strong></td><td data-label="ID 및 명칭"><strong><code>SD-020</code> (<code>C22</code>)</strong>&lt;br&gt;비밀 관계를 숨긴 순간 불청객 등장</td><td data-label="작동 원리 (욕망 → 방해 → 전환 → 결말)"><strong>[작동]</strong> 대역 정산 서류를 챙기던 순간 시어머니가 응접실 양개문을 열고 급습하여 즉각적 은폐와 대치를 강제함</td><td data-label="근거 한계(`evidence_limit`) 및 본작의 창작 설계"><code>S03</code> 클립 제목 수준 근거이며 이후 전개는 미확인. 본작에서는 옷장 은신 대신 <strong>테이블 아래 서류 은폐 및 즉석 다과 대치</strong>로 창작 변형함.</td></tr>
+<tr><td data-label="위계 구분"><strong>하위 상황 비트 2</strong></td><td data-label="ID 및 명칭"><strong><code>SD-002</code> (<code>C02</code>)</strong>&lt;br&gt;연상 문답이 숨긴 친숙함을 드러내기</td><td data-label="작동 원리 (욕망 → 방해 → 전환 → 결말)"><strong>[작동]</strong> 시어머니가 &quot;천한 것들이나 쓰는 싸구려 세정제&quot;라고 엉터리 설명을 하자, 귀족 영애인 척하던 주인공이 참지 못하고 계면활성제 비율과 특수 분장 용해 원리를 반사적으로 정정해 본업(특수 복원·클렌징 연구원) 지식을 노출함</td><td data-label="근거 한계(`evidence_limit`) 및 본작의 창작 설계"><code>S01</code> 관찰 보고 추론 후보이며 GPT는 무지 부인 모순 미확인으로 보류 권고. 본작에서는 핵심 서사 축이 아닌 <strong>초반 대사 반전 비트</strong>로만 제한 사용하여 초반 15초 내 긴장을 형성함.</td></tr>
+<tr><td data-label="위계 구분"><strong>단발 개그 비트</strong></td><td data-label="ID 및 명칭"><strong><code>GAG-001</code> (<code>C21</code>)</strong>&lt;br&gt;호칭의 대상을 잘못 알아듣기</td><td data-label="작동 원리 (욕망 → 방해 → 전환 → 결말)"><strong>[작동]</strong> 집사가 문밖에서 &quot;사모님, 친자 불일치 서류 왔습니다!&quot;라고 부르자, 시어머니와 대역 며느리가 동시에 대답해 누가 진짜 허위 혈통인지 혼선을 빚음</td><td data-label="근거 한계(`evidence_limit`) 및 본작의 창작 설계"><code>S22</code> 클립 제목 수준 근거이며 단발 장면용 개그로 분리됨. 2막 전환점의 호흡 전환용 마이크로 비트로만 사용함.</td></tr>
+</tbody></table></div>
+<h6>2) 기존 막장 사전(cliches.json) 결합 항목</h6>
+<p class="bullet">• <strong>서사·관계·소품</strong>:</p>
+<p class="bullet">• <code>MK-0004</code> (체호프의 총): 1씬에서 시어머니가 &quot;물병 치워라&quot;라며 무시한 테이블 위 투명 토너/클렌징 워터가 3씬 물세례(<code>water-prompt.txt</code>)의 결정적 반전 무기로 회수됨.</p>
+<p class="bullet">• <code>MK-0008</code> (시어머니의 일방적 편들기 + <code>comic_inversion</code>): 외도한 아들을 감싸며 며느리를 쫓아내려다, 아들이 몰래 연대보증 세운 위약금 50억까지 시어머니 본인이 떠안게 됨.</p>
+<p class="bullet">• <code>MK-0014</code> &amp; <code>MK-0563</code> (희귀 신체표식 혈연 증명 &amp; 탈부착 얼굴 점): 가문의 상징인 &#x27;붉은 별점&#x27;을 중심으로 혈통을 다투되, 사전의 <code>caution</code>을 준수하여 점 하나로 혈연을 확정하지 않고 공증 계약서·유전자 감정서(<code>MK-0351</code>)로 교차 입증함.</p>
+<p class="bullet">• <code>MK-0248</code> &amp; <code>MK-0426</code> (돈 때문에 본인으로 복귀): 위자료·합의금 수령인이 &#x27;대역&#x27;이 아닌 &#x27;현장 피해 당사자 본명&#x27;으로 지정된 특약 때문에 주인공이 스스로 가짜 점을 지우고 본체로 복귀함.</p>
+<p class="bullet">• <strong>행동·반응·연출</strong>:</p>
+<p class="bullet">• <code>MK-0558</code> &amp; <code>MK-0556</code> (국적 불명 귀족 저택 &amp; 대저택 중앙 거실): 서양식 귀족 응접실에서 한국식 시집살이와 족보·위자료 타령이 벌어지는 이질적 막장 미장센 구현.</p>
+<p class="bullet">• <code>MK-0333</code> &amp; <code>MK-0521</code> (식탁 물세례 / 물컵 액체 투척) 및 <code>MK-0335</code> (따귀 후 고개 고정): 각각 water-prompt.txt와 slap-prompt.txt의 카메라·동선·무언 타격 규칙으로 구현.</p>
+<p class="bullet">• <code>MK-0385</code> (찢은 계약서의 복원) &amp; <code>MK-0430</code> (아수라장 속 실무자 정상업무): 시어머니가 각서를 찢자마자 집사가 태블릿과 공증 원본 바인더를 내밀며 실시간으로 파손 변상금까지 합산.</p>
+<p class="bullet">• <strong>배경음악·음향 전환</strong>:</p>
+<p class="bullet">• <code>MK-0412</code> &amp; <code>MK-0590</code> (폭로 순간 배경음악 급정지 / 음소거 정적), <code>MK-0608</code> (정체 반전 소품 탈착 시 잔향 페이드아웃과 본색 노출 후 가속 재진입), <code>MK-0611</code> (서류 타격음 박자 동기화), <code>MK-0622</code> (파혼·위자료 담판의 상거래 효과음 리듬화), <code>MK-0630</code> (막장 대소동 퇴장 직후의 긴 폐허 침묵과 여운 단음 종지).</p>
+<hr>
+<h5>Part 2. 제품(PPL) 선정 및 막장 서사 결합 설계</h5>
+<h6>1) 선정 제품 프로필</h6>
+<p class="bullet">• <strong>제품명</strong>: <strong>『제로페이크(ZERO-FAKE) 원샷 미셀라 클렌징 워터 &amp; 듀얼 패드』</strong></p>
+<p class="bullet">• <strong>제품 카테고리</strong>: 고기능성 저자극 포인트 메이크업 &amp; 워터프루프 색조 올인원 클렌저</p>
+<p class="bullet">• <strong>핵심 소구점 (USP)</strong>:</p>
+<p>1. <strong>초강력 세정력</strong>: 워터프루프 아이라이너, 무대용 특수 분장 풀, 반영구급 타투 스탬프(가짜 점)까지 문지름 없이 닿는 순간 녹여내는 미셀라 오일-워터 포뮬러.</p>
+<p>2. <strong>무자극 안심 성분 (눈 시림 제로)</strong>: 생수처럼 투명한 워터 제형으로, 얼굴 전체에 직접 닿아도 눈 시림이나 피부 붉어짐 없이 노폐물과 색조만 선택적으로 분리.</p>
+<p>3. <strong>즉각적 광채 복원</strong>: 두꺼운 위선(화장)을 지워낸 자리엔 촉촉한 본연의 수분 광채만 남김.</p>
+<h6>2) 왜 이 제품이 막장 클리셰와 완벽하게 맞물리는가?</h6>
+<p>1. <strong>물세례(<code>water-prompt.txt</code> / <code>MK-0333</code>)의 기능적 전환</strong>:</p>
+<p class="bullet">• 일반 막장 드라마에서 물세례는 단순한 감정적 모욕에 그치지만, 본 기획에서는 <strong>테이블 위 유리잔에 담겨 있던 투명한 액체가 사실 주인공이 테스트 중이던 『제로페이크 클렌징 워터』</strong>였다는 설정(<code>MK-0004</code> 체호프의 총)을 부여합니다.</p>
+<p class="bullet">• 시어머니(마리안 홍)가 물세례를 맞고 눈을 질끈 감았다가 뜨는 순간(water-prompt.txt), <strong>&quot;눈은 하나도 안 시린데 이마에 찍어둔 가짜 황실 혈통 점과 철벽 메이크업만 거짓말처럼 녹아내리는&quot;</strong> 시각적 반전이 일어납니다.</p>
+<p>2. <strong>돈 때문에 정체 복귀(<code>MK-0248</code> / <code>MK-0426</code>)와의 코믹 결합</strong>:</p>
+<p class="bullet">• 주인공(엘라라/강세라) 역시 대역 계약 때문에 눈 밑에 방수 점을 찍고 있었으나, <strong>&quot;폭행 및 모욕 위자료 5억 원은 대역 계약자가 아닌 현장 피해 본명 당사자에게만 즉시 지급된다&quot;</strong>는 집사의 정산 보고를 듣자마자, 직접 『제로페이크 듀얼 패드』로 자기 눈 밑의 방수 점을 1초 만에 쓱 닦아내며 <strong>&quot;자, 점 지웠고 본명 강세라입니다. 입금하시죠&quot;</strong>라고 선언합니다.</p>
+<p class="bullet">• 즉, <strong>악역의 위선 폭로(1차 세정)</strong>와 <strong>주인공의 사이다 실리 쟁취(2차 세정)</strong> 양쪽 모두에서 제품이 서사의 핵심 열쇠로 작동합니다.</p>
+<hr>
+<h5>Part 3. 시나리오 개요 (Synopsis &amp; Characters)</h5>
+<p class="bullet">• <strong>작품 제목</strong>: <strong>《가짜 점 하나에 5억, 씻겨 나간 혈통》</strong></p>
+<p class="bullet">• <strong>포맷 / 러닝타임</strong>: 90초 세로형 숏드라마 (단일 에피소드 자가완결형 + 후속 화 확장 가능)</p>
+<p class="bullet">• <strong>공간 배경 (<code>&lt;Subject 3&gt;</code> 레퍼런스 100% 일치)</strong>:</p>
+<p class="bullet">• <strong>로얄 캐슬 그룹 대저택 응접실 (Drawing Room)</strong>: 중앙의 중후한 호두나무 테이블(walnut table), 패브릭 업홀스터리 체어(upholstered chairs), 좌측 창문으로 들어오는 자연광(left-side window daylight), 우측 후방의 양개문(rear-right double door), 좌측 후방의 벽난로(back-left fireplace). (<code>MK-0558</code> 국적 불명 귀족 저택)</p>
+<p class="bullet">• <strong>등장인물 (총 3인 — <code>shortdrama-cliches.json</code> 제작 효율 기준 충족)</strong>:</p>
+<p>1. <strong>엘라라 / 본명 강세라 (28세, 여) — <code>&lt;Subject 1&gt;</code> / <code>&lt;Picture 1&gt;</code> 레퍼런스 매핑</strong></p>
+<p class="bullet">• <strong>외양</strong>: 자연스러운 피부 결, 다크 브라운 반묶음 헤어(dark brown half-pinned hair), 작은 진주 귀걸이(small pearl earrings), 에메랄드 드레스(emerald dress). 왼쪽 눈 밑에 작고 진한 &#x27;가짜 점&#x27;(<code>MK-0563</code>)이 찍혀 있음.</p>
+<p class="bullet">• <strong>설정</strong>: 본업은 화장품 성분 연구원이자 특수 분장 복원 전문가. 잠적한 로얄 그룹 약혼녀 &#x27;엘라라&#x27;와 똑같이 생겨 일당 1,000만 원 조건으로 하루 대역(<code>SD-003</code>)을 맡았으나, 예비 남편의 잠적과 시어머니의 적반하장 위약금 청구를 맞닥뜨림.</p>
+<p>2. <strong>마리안 홍 / 홍 여사 (50대 중반, 여) — <code>&lt;Subject 2&gt;</code> / <code>&lt;Picture 2&gt;</code> 레퍼런스 매핑</strong></p>
+<p class="bullet">• <strong>외양</strong>: 성숙한 얼굴, 실버 블론드 번 헤어(silver-blonde bun), 작은 금 귀걸이(small gold earrings), 버건디 드레스(burgundy dress). 관자놀이 근처에 가문 정통 후계자의 상징이라는 &#x27;붉은 별 모양 혈통 반점&#x27;(<code>MK-0014</code>)이 선명함.</p>
+<p class="bullet">• <strong>설정</strong>: 로얄 캐슬 그룹의 안주인. 외도 후 도주한 자기 아들은 감싸면서(<code>MK-0008</code>), 대역인 줄 꿈에도 모른 채 며느리에게 파혼 귀책사유와 가문 채무 50억을 덮어씌우려 하는 위선적 권력자.</p>
+<p>3. <strong>박 집사 (40대, 남) — 보조 조연 (<code>MK-0425</code> 상식 담당자 / <code>MK-0430</code> 아수라장 속 실무자)</strong></p>
+<p class="bullet">• <strong>외양</strong>: 단정한 연미복 차림, 손에는 공증 서류 바인더와 전자 계산기가 연동된 태블릿을 들고 있음.</p>
+<p class="bullet">• <strong>설정</strong>: 양개문으로 출입하며 모든 막장 폭로를 회계 장부와 법률 특약 조항으로 실시간 환산해 주는 극 중 상식 담당자.</p>
+<hr>
+<h5>Part 4. 채택 음원 매핑 테이블 (references/music.md 기준)</h5>
+<blockquote>[!WARNING]</blockquote>
+<blockquote><strong>폐기·반려 음원 사용 금지 확인</strong></blockquote>
+<blockquote>- <code>makjang-bgm-7</code> (기존 7곡 전체): <strong>사용 금지 (폐기)</strong></blockquote>
+<blockquote>- <code>N01-FURY</code> (대치 격화): <strong>사용 금지 (대표님 반려·폐기)</strong></blockquote>
+<blockquote>- <code>F01-TABLE</code> (<code>makjang-confrontation-five-20261017/F01-TABLE</code>): <strong>사용 금지 (대표님 «너무 잔잔해» 반려·폐기)</strong></blockquote>
+<p>본 대본에서는 대표님이 최종 채택한 <strong>8곡 중 6곡</strong>을 장면의 감정선과 음향 전환 클리셰(<code>MK-0601</code>~<code>MK-0630</code>)에 맞춰 아래와 같이 배치합니다(2·3화 확장 시 나머지 채택곡 <code>CONFRONTATION145-SAMPLE01</code>, <code>N05-EXPLOSION</code>까지 전곡 활용).</p>
+<div class="table-wrap"><table><thead><tr><th>구간 (타임코드)</th><th>채택 음원 코드 (music.md)</th><th>형태 및 용도</th><th>결합된 음향 전환 클리셰 (cliches.json)</th></tr></thead><tbody>
+<tr><td data-label="구간 (타임코드)"><strong>#1. 도입~급습</strong>&lt;br&gt;(00:00~00:18)</td><td data-label="채택 음원 코드 (music.md)"><strong><code>T1-NEW</code></strong>&lt;br&gt;(급박한 대치·말싸움 새 버전)</td><td data-label="형태 및 용도">연주곡</td><td data-label="결합된 음향 전환 클리셰 (cliches.json)"><code>MK-0602</code> (추궁에서 내로남불 역공 전환) &amp; <code>SD-002</code> 지식 노출 순간 하드컷</td></tr>
+<tr><td data-label="구간 (타임코드)"><strong>#2. 서류 공방</strong>&lt;br&gt;(00:18~00:35)</td><td data-label="채택 음원 코드 (music.md)"><strong><code>N04-EXPOSE</code></strong>&lt;br&gt;(폭로 공방)</td><td data-label="형태 및 용도">연주곡</td><td data-label="결합된 음향 전환 클리셰 (cliches.json)"><code>MK-0611</code> (단일 리듬 루프 유지와 서류 타격음 박자 동기화)</td></tr>
+<tr><td data-label="구간 (타임코드)"><strong>#3. 따귀 액션</strong>&lt;br&gt;(00:35~00:43)</td><td data-label="채택 음원 코드 (music.md)"><strong>무음 (<code>non_diegetic_music: N/A</code>)</strong></td><td data-label="형태 및 용도">현장음 단독</td><td data-label="결합된 음향 전환 클리셰 (cliches.json)">slap-prompt.txt 준수 + <code>MK-0412</code>·<code>MK-0590</code> (폭로·타격 순간 배경음악 급정지 및 음소거 정적)</td></tr>
+<tr><td data-label="구간 (타임코드)"><strong>#4. 말싸움 격화</strong>&lt;br&gt;(00:43~00:54)</td><td data-label="채택 음원 코드 (music.md)"><strong><code>N03-ARGUMENT</code></strong> → <strong><code>N02-COLLISION</code></strong></td><td data-label="형태 및 용도">연주곡</td><td data-label="결합된 음향 전환 클리셰 (cliches.json)">억지 모함과 정면충돌 빌드업 후 물세례 직전 절단</td></tr>
+<tr><td data-label="구간 (타임코드)"><strong>#5. 물세례 액션</strong>&lt;br&gt;(00:54~01:02)</td><td data-label="채택 음원 코드 (music.md)"><strong>무음 (<code>non_diegetic_music: N/A</code>)</strong></td><td data-label="형태 및 용도">현장음 단독</td><td data-label="결합된 음향 전환 클리셰 (cliches.json)">water-prompt.txt 준수 (실시간 물벼락 타격음 및 호흡음 단독 노출)</td></tr>
+<tr><td data-label="구간 (타임코드)"><strong>#6. 가짜 혈통 폭로</strong>&lt;br&gt;(01:02~01:14)</td><td data-label="채택 음원 코드 (music.md)"><strong><code>T2-REVELATION</code></strong>&lt;br&gt;(출생의 비밀·충격 반전)</td><td data-label="형태 및 용도">연주곡</td><td data-label="결합된 음향 전환 클리셰 (cliches.json)"><code>MK-0617</code> (혈통 단서 반전) + <code>MK-0622</code> (위자료 상거래 돌입 시 하드컷 및 계산기·펜촉 효과음 리듬화)</td></tr>
+<tr><td data-label="구간 (타임코드)"><strong>#7. 정체 복귀·퇴장</strong>&lt;br&gt;(01:14~01:30)</td><td data-label="채택 음원 코드 (music.md)"><strong><code>T3-REVENGE-VOCAL</code></strong>&lt;br&gt;(흑화·복수 선언)</td><td data-label="형태 및 용도"><strong>여성 보컬 록 발라드</strong></td><td data-label="결합된 음향 전환 클리셰 (cliches.json)">music.md 지침 준수: 대사 완료 후 <strong>무대사 워킹 몽타주(<code>MK-0409</code>) 구간에만 보컬 트랙 투입</strong> → 문 닫힘과 함께 <code>MK-0630</code> 폐허 침묵으로 마무리</td></tr>
+</tbody></table></div>
+<hr>
+<h5>Part 5. 완성 대본 (Full Production Script — 90초 숏드라마)</h5>
+<h6>[기본 설정 및 레퍼런스 매칭]</h6>
+<p class="bullet">• <strong>장소 (<code>&lt;Subject 3&gt;</code>)</strong>: 대저택 응접실. 좌측 창문으로 밝은 주간 자연광이 들어오고, 중앙에는 호두나무 테이블과 패브릭 의자, 좌측 후방에는 벽난로, 우측 후방에는 양개문이 위치함.</p>
+<p class="bullet">• <strong>인물 배치</strong>:</p>
+<p class="bullet">• <strong>프레임 좌측</strong>: 엘라라 / 강세라 (<code>&lt;Subject 1&gt;</code> — 다크 브라운 반묶음 머리, 작은 진주 귀걸이, 에메랄드 드레스, 왼쪽 눈 밑에 방수 가짜 점)</p>
+<p class="bullet">• <strong>프레임 우측</strong>: 마리안 홍 (<code>&lt;Subject 2&gt;</code> — 실버 블론드 번 헤어, 작은 금 귀걸이, 버건디 드레스, 오른쪽 관자놀이 근처에 가문 혈통 별점)</p>
+<p class="bullet">• <strong>핵심 소품</strong>:</p>
+<p>1. 호두나무 테이블 위에 놓인 <strong>『제로페이크(ZERO-FAKE) 원샷 미셀라 클렌징 워터』</strong> 본품 보틀과, 그 옆에 나란히 놓인 <strong>투명한 유리잔(안에는 물 대신 테스트용 제로페이크 클렌징 워터가 가득 담겨 있음)</strong> (<code>MK-0004</code> 체호프의 총)</p>
+<p>2. 파혼 및 위약금 50억 청구 각서 / 유전자 감정서 봉투 / 박 집사의 정산 태블릿</p>
+<hr>
+<h6>🎬 Scene 1. 급습과 연상 문답의 자백 (00:00 ~ 00:18)</h6>
+<p><strong>[적용 클리셰]</strong>: <code>SD-020</code>(불청객 등장) + <code>MK-0008</code>(시어머니 편들기) + <code>SD-001</code>·<code>SD-002</code>(억지 논리 추궁과 본업 지식 반사 노출) + <code>MK-0004</code>(체호프의 총 소품 심기)</p>
+<p class="bullet">• <strong>[Cut 1 | 00:00~00:04] (Eye-level Medium Shot)</strong></p>
+<p class="bullet">• <strong>화면</strong>: 응접실 호두나무 테이블. 에메랄드 드레스를 입은 세라(<code>&lt;Subject 1&gt;</code>)가 빈 유리잔에 <strong>『제로페이크 원샷 미셀라 클렌징 워터』</strong>를 가득 따르고, 보틀을 테이블 한쪽에 내려놓는다(<code>MK-0004</code>). 손목시계를 보며 대역 퇴근 시간을 확인하는 순간, 우측 후방 양개문(<code>rear-right double door</code>)이 벌컥 열린다(<code>MK-0550</code>, <code>SD-020</code>).</p>
+<p class="bullet">• <strong>음향</strong>: 양개문 타격 효과음(쾅!)과 동시에 <strong><code>[BGM IN: T1-NEW (급박한 대치·말싸움 새 버전 - 연주곡)]</code></strong> 급진입.</p>
+<p class="bullet">• <strong>[Cut 2 | 00:04~00:11] (Two-Shot)</strong></p>
+<p class="bullet">• <strong>화면</strong>: 버건디 드레스의 마리안 홍(<code>&lt;Subject 2&gt;</code>)이 위아래로 세라를 훑어보며(<code>MK-0534</code>) 테이블 앞으로 다가선다. 세라는 대역 계약서 사본을 테이블보 밑으로 슬쩍 밀어 넣는다.</p>
+<p class="bullet">• <strong>마리안 홍</strong>: &quot;내 아들이 바람 좀 피웠기로서니 감히 안방을 비워? 이 집안 공기가 어지러워진 건 다 네가 들여놓은 저 싸구려 불량 세정제 독성 때문이야!&quot; (<code>SD-001</code> 억지 논리 + <code>MK-0008</code> 아들 감싸기)</p>
+<p class="bullet">• <strong>화면(Insert — <code>MK-0577</code> 소품 익스트림 클로즈업)</strong>: 테이블 위 『제로페이크 원샷 미셀라 클렌징 워터』 보틀과 옆의 투명한 유리잔.</p>
+<p class="bullet">• <strong>[Cut 3 | 00:11~00:18] (Close-up 교차)</strong></p>
+<p class="bullet">• <strong>화면</strong>: 고상한 귀족 영애 &#x27;엘라라&#x27;를 연기해야 하는 세라(<code>SD-003</code>)가 &#x27;불량 세정제&#x27;라는 말에 연구원 본능을 참지 못하고 눈을 번쩍 뜬다(<code>SD-002</code>).</p>
+<p class="bullet">• <strong>세라</strong>: &quot;불량이라니요! 저건 친유성·친수성 미셀라 입자가 3:7 황금 비율로 배합돼서 방수 분장만 쏙 빼내고 각막 자극 지수는 0.00인 무독성—&quot;</p>
+<p class="bullet">• <strong>음향</strong>: <strong><code>[BGM HARD-CUT: T1-NEW 급정지]</code></strong> (<code>MK-0412</code>) + 짧은 헛기침 효과음(<code>MK-0355</code>).</p>
+<p class="bullet">• <strong>화면</strong>: 말을 내뱉고 아차 싶어 입을 다무는 세라(<code>SD-002</code> payoff). 마리안 홍이 눈을 가늘게 뜨며 의심스러운 시선으로 세라의 왼쪽 눈 밑 &#x27;점&#x27;을 노려본다.</p>
+<hr>
+<h6>🎬 Scene 2. 서류 핑퐁 공방과 호칭 착각 (00:18 ~ 00:35)</h6>
+<p><strong>[적용 클리셰]</strong>: <code>MK-0021</code>·<code>MK-0228</code>(이혼·파혼 서류 투척 및 위자료 각서 함정) + <code>MK-0611</code>(서류 타격음 박자 동기화) + <code>MK-0385</code>(찢은 계약서의 복원) + <code>GAG-001</code>(호칭의 대상을 잘못 알아듣기)</p>
+<p class="bullet">• <strong>[Cut 4 | 00:18~00:26] (Medium Two-Shot)</strong></p>
+<p class="bullet">• <strong>음향</strong>: 마리안 홍이 테이블 위에 두꺼운 서류 봉투를 &#x27;탁!&#x27; 내려놓는 타격음을 첫 박으로 삼아 <strong><code>[BGM IN: N04-EXPOSE (폭로 공방 - 연주곡)]</code></strong> 리듬 루프 진입(<code>MK-0611</code>).</p>
+<p class="bullet">• <strong>마리안 홍</strong>: &quot;어차피 잘 됐다! 내 아들이 진정한 사랑 찾아 떠났으니, 네가 혼수 위약금 50억 물고 이 파혼 각서에 지장 찍어!&quot; (<code>MK-0019</code>, <code>MK-0596</code> 내로남불 논리 역전)</p>
+<p class="bullet">• <strong>세라</strong>: (기가 막힌 듯 코웃음 치며 핸드백에서 공증 서류를 꺼내 박자에 맞춰 &#x27;탁!&#x27; 내리꽂는다) &quot;어머, 어쩌죠? 아드님이 도망가기 전날 직접 공증받은 &#x27;귀책 배우자 위자료 50억 및 폭행 특약 각서&#x27;가 여기 있는데!&quot; (<code>MK-0228</code>)</p>
+<p class="bullet">• <strong>마리안 홍</strong>: (서류를 낚아채 두 동강으로 쫙 찢어버리며 비소 짓는다 — <code>MK-0359</code>) &quot;각서? 지금 찢었으니 없던 일이구나!&quot;</p>
+<p class="bullet">• <strong>[Cut 5 | 00:26~00:35] (Doorway Medium Shot → Two-Shot)</strong></p>
+<p class="bullet">• <strong>화면</strong>: 바로 그때 우측 후방 양개문이 열리며 박 집사(<code>MK-0430</code>)가 황급히 들어선다.</p>
+<p class="bullet">• <strong>박 집사</strong>: &quot;사모님! 큰일 났습니다! 가짜 혈통 감정서랑 원본 공증 사본이 도착했습니다!&quot;</p>
+<p class="bullet">• <strong>마리안 홍 &amp; 세라</strong>: (동시에 고개를 돌리며) <strong>&quot;왜?!&quot;</strong> (<code>GAG-001</code> 호칭의 대상을 잘못 알아듣기)</p>
+<p class="bullet">• <strong>음향</strong>: <strong><code>[BGM 일시 덕킹]</code></strong> — 정적 속에서 두 여자가 서로를 보며 &quot;누구 보고 사모님이라는 거야?&quot; 눈빛을 주고받는다.</p>
+<p class="bullet">• <strong>박 집사</strong>: (태블릿을 켠 채 무표정하게 — <code>MK-0425</code>) &quot;참고로 방금 마리안 여사님이 찢으신 종이는 표지 사본이고, 법적 효력이 있는 전자 공증 원본은 법무팀 서버에 살아 있습니다(<code>MK-0385</code>). 또한 특약 제3조에 따라, 이 응접실에서 상대방의 신체에 손찌검할 경우 즉시 현금 5억 원의 피해 보상금이 가산됩니다.&quot;</p>
+<hr>
+<h6>🎬 Scene 3. 분노의 따귀 액션 — AI 비디오 레퍼런스 샷 1 (00:35 ~ 00:43)</h6>
+<p><strong>[적용 클리셰 &amp; 프롬프트]</strong>: <code>MK-0335</code>(따귀 후 고개 고정) + <code>MK-0412</code>·<code>MK-0590</code>(타격 순간 무음 정적) + <strong>slap-prompt.txt 원문 메커니즘 100% 연동</strong></p>
+<p class="bullet">• <strong>[Cut 6 | 00:35~00:37] (Close-up)</strong></p>
+<p class="bullet">• <strong>화면</strong>: 박 집사의 말에 이성을 잃은 마리안 홍이 세라를 모욕하려 손을 올리려 하지만, 세라가 먼저 차갑게 입을 닫고 턱에 힘을 준다(<code>MK-0354</code> 분노의 턱 떨림).</p>
+<p class="bullet">• <strong>세라</strong>: (직전 대사) &quot;내가 가짜 대역이든 진짜든, 당신 아들이 사기꾼이라는 사실은 안 변해. 못 믿겠으면 정신 차리게 해 드릴까?&quot;</p>
+<p class="bullet">• <strong>음향</strong>: 대사 끝 음절과 동시에 <strong><code>[BGM COMPLETELY OFF — non_diegetic_music: N/A]</code></strong> (<code>MK-0590</code>).</p>
+<p class="bullet">• <strong>[Cut 7 | 00:37~00:43] (Fixed, Eye-Level Medium-Wide Two-Shot — slap-prompt.txt 적용 컷)</strong></p>
+<p class="bullet">• <strong>AI Video Generation Prompt 지시문 (slap-prompt.txt 구조 준수)</strong>:</p>
+<p class="bullet">• <strong>프레임 및 인물</strong>: <code>&lt;Subject 3&gt;</code>(호두나무 테이블, 패브릭 의자, 좌측 창문 자연광, 우측 후방 양개문, 좌측 후방 벽난로가 보이는 응접실)의 고정 아이레벨 미디엄 와이드 투샷. 프레임 좌측에 에메랄드 드레스·진주 귀걸이·다크 브라운 반묶음 머리의 세라(<code>&lt;Subject 1&gt;</code>), 프레임 우측에 버건디 드레스·금 귀걸이·실버 블론드 번 헤어의 마리안(<code>&lt;Subject 2&gt;</code>)이 팔이 닿을 거리에서 마주 서 있다. 프레임 안에 세라의 오른팔 전체와 두 사람의 얼굴, 그리고 마리안 너머 우측의 열린 공간이 모두 보인다.</p>
+<p class="bullet">• <strong>무언 규칙</strong>: <strong>샷이 진행되는 내내 두 여성 모두 입술을 굳게 다문 침묵 상태를 유지한다(<code>Both women keep their lips closed in silence</code>).</strong> 재생 속도는 1배속 실사 정상 속도(<code>normal speed</code>).</p>
+<p class="bullet">• <strong>동작 메커니즘</strong>: 시작 시점 세라의 오른손은 엉덩이 옆에 낮게 드리워져 있다. 세라의 턱이 굳어진다. 한 번의 갑작스러운 동작으로 세라가 어깨와 상체를 프레임 우측으로 살짝 회전시키며 열린 오른손을 두 사람 사이의 공간을 가로질러 빠르게 휘두른다. 스윙 중간 지점에서 세라의 손바닥이 마리안의 왼쪽 뺨을 짧고 강하게 타격한다. 그 순간 날카로운 따귀 소리(<code>one sharp slap</code>)가 울린다. 마리안의 머리와 어깨가 프레임 우측으로 휙 꺾인다(<code>MK-0335</code>). 세라의 어깨는 회전을 멈추지 않고 팔꿈치와 손을 마리안의 얼굴 너머 허공으로 넓고 연속적인 호(<code>broad sweeping arc</code>)를 그리며 이끌고 나가며, 상체 회전이 끝나면서 소매가 호를 따라 흐른 뒤 자연스럽게 팔이 가라앉는다. 마리안은 타격으로 고개가 돌아간 채 경악 속에서 자세를 회복한다. 카메라는 컷 분할 없이 원테이크로 두 여성을 담아낸다.</p>
+<p class="bullet">• <strong>음향 (<code>overall_soundscape</code>)</strong>: 조용한 응접실 실내 앰비언스, 타격 순간의 날카로운 따귀 소리 1회, 마리안의 몸이 젖혀질 때의 짧은 옷자락 마찰음(<code>clothing rustle</code>). 배경음악 없음(<code>non_diegetic_music: N/A</code>).</p>
+<hr>
+<h6>🎬 Scene 4. 적반하장 혈통 추궁과 물세례 — AI 비디오 레퍼런스 샷 2 (00:43 ~ 01:02)</h6>
+<p><strong>[적용 클리셰 &amp; 프롬프트]</strong>: <code>MK-0014</code>(희귀 신체표식 혈연 증명) + <code>MK-0333</code>·<code>MK-0521</code>(식탁 물세례) + <strong>water-prompt.txt 원문 메커니즘 100% 연동</strong></p>
+<p class="bullet">• <strong>[Cut 8 | 00:43~00:54] (Close-up 교차)</strong></p>
+<p class="bullet">• <strong>음향</strong>: <strong><code>[BGM IN: N03-ARGUMENT (말싸움 폭주 - 연주곡)]</code></strong> → 00:49부터 <strong><code>[N02-COLLISION (정면충돌 - 연주곡)]</code></strong>으로 고조.</p>
+<p class="bullet">• <strong>마리안 홍</strong>: (돌아간 뺨을 감싸 쥐고 동공 지진(<code>MK-0528</code>)을 일으키며 악을 쓴다) &quot;이, 이 천박한 가짜 년이 감히 로얄 가문의 적통 어른을 쳐?! 내 관자놀이에 있는 이 붉은 별점 안 보여?!(<code>MK-0014</code>) 황실 대대로 내려오는 진짜 피의 증거! 네년 눈 밑에 찍힌 그 수상한 점부터 당장 문질러서 벗겨내 볼까?!&quot;</p>
+<p class="bullet">• <strong>화면</strong>: 우아하게 테이블 의자에 앉는 세라. 테이블 위에 놓인 유리잔(1씬에서 『제로페이크 원샷 미셀라 클렌징 워터』를 따라둔 잔)을 자연스럽게 똑바로 쥐며(<code>begins holding the glass naturally upright</code>) 싸늘하게 미소 짓는다.</p>
+<p class="bullet">• <strong>세라</strong>: &quot;그 귀하신 혈통 점, 진짜인지 가짜인지 지금 바로 세안해 보시죠.&quot;</p>
+<p class="bullet">• <strong>음향</strong>: 대사 직후 <strong><code>[BGM HARD-CUT — non_diegetic_music: N/A]</code></strong>.</p>
+<p class="bullet">• <strong>[Cut 9 | 00:54~01:02] (High-Tension Real-Time Shot — water-prompt.txt 적용 컷)</strong></p>
+<p class="bullet">• <strong>AI Video Generation Prompt 지시문 (water-prompt.txt 구조 준수)</strong>:</p>
+<p class="bullet">• <strong>프레임 및 인물</strong>: <code>&lt;Picture 3&gt;</code>(호화로운 귀족풍 거실/응접실)의 우아한 테이블에 앉은 에메랄드 드레스의 성인 여성(<code>&lt;Picture 1&gt;</code>, 세라)과 그 맞은편에서 물벼락을 맞는 버건디 드레스의 중년 여성(<code>&lt;Picture 2&gt;</code>, 마리안 홍). <strong>두 여성 모두 샷 내내 입술을 굳게 다문 무언 상태를 유지한다(<code>Both women keep their lips closed in silence</code>).</strong> 전 과정은 1배속 정상 실시간 속도(<code>normal real-time speed</code>)로 재생된다.</p>
+<p class="bullet">• <strong>동작 메커니즘</strong>: 테이블에 앉은 세라가 유리잔을 자연스럽게 똑바로 세워 쥔 상태에서 시작한다. 그녀의 전완(forearm)이 마리안 홍을 향해 빠르게 뻗어 나가는 동시에, 손목이 앞으로 회전하며 유리잔의 열린 입구(open rim)가 마리안 홍의 얼굴을 정면으로 향하고 잔의 바닥(base)은 던지는 세라 쪽을 가리킨다. 물(클렌징 워터)이 잔을 떠나는 바로 그 찰나에 유리잔이 피해자 쪽으로 명확히 기울어져 있으며, 모든 액체가 열린 입구를 통해 얼굴을 겨냥한 한 번의 짧고 강력한 넓은 물보라(<code>one short, forceful broad splash aimed at the face</code>)로 뿜어져 나간다.</p>
+<p class="bullet">• <strong>피격 반응 및 카메라</strong>: 액체가 마치 따귀처럼 갑작스럽게 마리안 홍의 얼굴을 강타한다. 타격 순간(<code>instant of impact</code>) 카메라가 날카롭게 줌인(<code>sharp camera zoom-in on impact</code>)한다. 마리안 홍은 두 눈을 질끈 감고(<code>squeezes her eyes shut</code>), 얼굴을 찡그리며(<code>grimaces</code>), 머리와 상체를 뒤쪽 및 약간 옆쪽으로 급격히 움츠린다(<code>sharply flinches her head and upper body backward and slightly sideways</code>). 갑작스러운 반동으로 그녀의 어깨가 경직되고 머리카락이 흔들린다. 이후 얼굴을 타고 액체가 흘러내리는 동안 그녀는 모욕감과 충격에 빠진 채 얼어붙어 있고, 세라는 비워진 유리잔을 천천히 내려놓는다.</p>
+<p class="bullet">• <strong>음향</strong>: 유리잔을 떠난 액체의 파열음과 얼굴 타격음, 거친 숨소리만 무반주로 노출.</p>
+<hr>
+<h6>🎬 Scene 5. 지워진 혈통 점과 위자료 역전 계산 (01:02 ~ 01:14)</h6>
+<p><strong>[적용 클리셰]</strong>: <code>MK-0617</code>(혈통 단서 오해·탄로) + <code>MK-0221</code>(가짜 귀족 신분 탄로) + <code>MK-0622</code>(상거래 돌입과 서류·계산 효과음 리듬화) + <code>MK-0248</code>·<code>MK-0426</code>(돈 때문에 본인으로 복귀)</p>
+<p class="bullet">• <strong>[Cut 10 | 01:02~01:08] (Extreme Close-up — <code>MK-0577</code>)</strong></p>
+<p class="bullet">• <strong>화면</strong>: 얼굴을 타고 흘러내리는 투명한 액체. 놀랍게도 마리안 홍은 눈을 떴는데 눈 시림이나 충혈이 전혀 없다! 대신 그녀의 관자놀이에 있던 &#x27;붉은 별 모양 가문 혈통 점&#x27;과 두꺼운 화장이 투명한 액체 한 방에 경계선부터 사르르 녹아내려 맨피부가 드러난다!</p>
+<p class="bullet">• <strong>음향</strong>: <strong><code>[BGM IN: T2-REVELATION (출생의 비밀·충격 반전 - 연주곡)]</code></strong> 충격 진입!</p>
+<p class="bullet">• <strong>박 집사</strong>: (감정서를 읽으며 차분하게 — <code>MK-0351</code>) &quot;방금 도착한 감정서 결과입니다. 마리안 여사님의 관자놀이 별점은 유전이 아니라 워터프루프 타투 스탬프였으며, 여사님은 선대 공작가의 친딸이 아닌 대역 사칭자(<code>MK-0221</code>)로 확인되었습니다.&quot;</p>
+<p class="bullet">• <strong>마리안 홍</strong>: (거울에 비친 자기 민낯과 사라진 점을 보고 경악 — <code>MK-0528</code>) &quot;말도 안 돼! 방수 코팅까지 한 점이 물 한 잔에 어떻게 지워져?! 게다가 눈도 왜 안 따가운 건데?!&quot;</p>
+<p class="bullet">• <strong>[Cut 11 | 01:08~01:14] (Medium Shot — PPL 핵심 소구 &amp; 정체 복귀)</strong></p>
+<p class="bullet">• <strong>세라</strong>: (테이블 위의 <strong>『제로페이크 원샷 미셀라 클렌징 워터 &amp; 패드』</strong>를 들어 보이며 산뜻하게 미소 짓는다) &quot;물이 아니라 제가 개발한 『제로페이크 원샷 미셀라 클렌징 워터』니까요. 각막 자극은 제로, 가짜 점과 두꺼운 위선은 원샷에 끝!&quot;</p>
+<p class="bullet">• <strong>음향</strong>: 박 집사가 계산기를 &#x27;찰칵&#x27; 두드리는 소리와 함께 <strong><code>[BGM HARD-CUT: T2-REVELATION 절단]</code></strong> (<code>MK-0622</code> 상거래 돌입 무음 설계).</p>
+<p class="bullet">• <strong>박 집사</strong>: (태블릿 펜촉을 톡톡 두드리며 — <code>MK-0622</code>) &quot;정산 결과 알려드립니다. 아까 따귀 1회 차감액 5억을 제외해도, 마리안 여사님과 아드님의 사기 혼인 귀책 위자료 잔액 <strong>45억 원</strong>이 남습니다. 단, 수령 조건상 대역인 &#x27;엘라라&#x27;가 아니라 <strong>현장에서 모욕을 당한 실제 본명 당사자</strong>에게만 즉시 입금됩니다.&quot;</p>
+<p class="bullet">• <strong>화면 (<code>MK-0248</code> 돈 때문에 본인으로 복귀 + <code>MK-0608</code> 소품 탈착)</strong>: 세라가1초의 망설임도 없이 『제로페이크 듀얼 패드』 한 장을 뽑아 자기 왼쪽 눈 밑을 &#x27;쓱&#x27; 한 번 닦아낸다. 철벽 방수였던 세라의 대역용 가짜 점이 단 한 번의 터치로 깨끗하게 사라지고, 투명하게 빛나는 무결점 본체 피부가 드러난다!</p>
+<p class="bullet">• <strong>세라</strong>: (패드를 들어 보이며 낮고 당당한 본래 목소리로 — <code>MK-0608</code>) &quot;대역 계약 종료. 제 본명은 화장품 연구원 강세라입니다. 45억, 강세라 계좌로 지금 쏘시죠.&quot;</p>
+<hr>
+<h6>🎬 Scene 6. 흑화·승리의 워킹 퇴장과 폐허의 여운 (01:14 ~ 01:30)</h6>
+<p><strong>[적용 클리셰]</strong>: <code>MK-0409</code>·<code>MK-0553</code>·<code>MK-0574</code>(아수라장 속 독보 퇴장 &amp; 전진 워킹 정면 샷) + <code>MK-0579</code>(엔딩 프리즈 프레임) + <code>MK-0630</code>(폐허 침묵과 홀로 남은 주변인의 여운 종지)</p>
+<p class="bullet">• <strong>[Cut 12 | 01:14~01:24] (Tracking Front Shot — 무대사 워킹 몽타주)</strong></p>
+<p class="bullet">• <strong>음향</strong>: <strong>music.md 보컬 곡 분리 원칙 적용</strong> — 모든 대사가 끝난 직후 <strong><code>[BGM IN: T3-REVENGE-VOCAL (흑화·복수 선언 - 여성 보컬 록 발라드)]</code></strong> 하이라이트 폭발!</p>
+<p class="bullet">• <strong>화면</strong>: 뒤편 배경에서는 마리안 홍이 지워진 점을 붙잡고 뒷목을 잡으며 벨벳 소파 위치를 슬쩍 확인한 뒤 쓰러지고(<code>MK-0623</code>), 세라는 핸드백에 『제로페이크 클렌징 워터』 본품을 챙겨 넣은 채 카메라 정면을 향해 당당하게 걸어 나온다(<code>MK-0553</code>, <code>MK-0574</code>).</p>
+<p class="bullet">• <strong>화면 자막 (PPL 카피)</strong>: *&quot;가짜 점도, 가짜 인생도 한 번에 싹— 제로페이크(ZERO-FAKE) 원샷 미셀라 클렌징 워터&quot;*</p>
+<p class="bullet">• <strong>[Cut 13 | 01:24~01:30] (Wide Shot → Freeze Frame — <code>MK-0630</code> &amp; <code>MK-0579</code>)</strong></p>
+<p class="bullet">• <strong>음향</strong>: 세라가 우측 후방 양개문을 열고 나간 뒤 문이 <strong>&#x27;쾅!&#x27;</strong> 닫히는 효과음과 동시에 <strong><code>[BGM HARD-CUT: T3-REVENGE-VOCAL 완전 절단]</code></strong> (<code>MK-0630</code>).</p>
+<p class="bullet">• <strong>화면</strong>: 폭풍이 지나간 응접실. 3초간의 완벽한 무음(<code>MK-0630</code> 폐허 침묵) 속에서 벽시계 초침 소리와 박 집사의 깊은 한숨 소리만 들린다.</p>
+<p class="bullet">• <strong>박 집사</strong>: (소파에 누워 실눈을 뜨고 있는 마리안 홍에게 태블릿을 내밀며 무반주로) &quot;마리안 여사님, 바닥에 쏟아진 클렌징 워터 청소비랑 소파 세탁비도 여사님 몫입니다. 할부 개월 수 고르시죠.&quot;</p>
+<p class="bullet">• <strong>화면 &amp; 음향</strong>: 마리안 홍이 다시 눈을 질끈 감는 순간 화면이 <strong><code>MK-0579</code>(엔딩 프리즈 프레임)</strong>로 정지하며, 피아노 단음 3개가 힘없이 툭 떨어지고 종료(<code>MK-0630</code>).</p>
+<hr>
+<h4>4. 검증 계획 (Verification Plan)</h4>
+<p>계획 승인 후 shortdrama-production-package.md 파일을 생성한 뒤 아래 항목을 전수 검증합니다.</p>
+<h5>1) 레퍼런스 정합성 검증 (Reference Compliance Check)</h5>
+<p class="bullet">• <strong>shortdrama-cliches.json 규율 검증</strong>:</p>
+<p class="bullet">• 1화 핵심 장치 1개(<code>SD-003</code>) 중심 위계 및 하위 비트(<code>SD-020</code>, <code>SD-002</code>, <code>GAG-001</code>) 분리 명시 여부 확인</p>
+<p class="bullet">• 사전의 <code>evidence_limit</code>(반복 빈도·흥행 인과 미검증) 명시 및 출처 작품(<code>S01</code>~<code>S23</code>) 고유 설정·대사 비복제 여부 확인</p>
+<p class="bullet">• <strong>cliches.json 3개 층위 결합 검증</strong>:</p>
+<p class="bullet">• <code>서사·관계·장치</code>(<code>MK-0004</code>, <code>MK-0008</code>, <code>MK-0014</code>, <code>MK-0021</code>, <code>MK-0221</code>, <code>MK-0228</code>, <code>MK-0248</code>, <code>MK-0331</code>), <code>행동·반응·연출</code>(<code>MK-0333</code>, <code>MK-0335</code>, <code>MK-0351</code>, <code>MK-0385</code>, <code>MK-0425</code>, <code>MK-0430</code>, <code>MK-0558</code>, <code>MK-0563</code>, <code>MK-0577</code>, <code>MK-0579</code>), <code>배경음악·음향 전환</code>(<code>MK-0412</code>, <code>MK-0590</code>, <code>MK-0608</code>, <code>MK-0611</code>, <code>MK-0617</code>, <code>MK-0622</code>, <code>MK-0630</code>)의 ID와 메커니즘 일치 여부 확인</p>
+<p class="bullet">• <strong>slap-prompt.txt 및 water-prompt.txt 검증</strong>:</p>
+<p class="bullet">• <code>&lt;Subject 1&gt;</code>(에메랄드 드레스·다크 브라운 반묶음·진주 귀걸이), <code>&lt;Subject 2&gt;</code>(버건디 드레스·실버 블론드 번·금 귀걸이), <code>&lt;Subject 3&gt;</code>(호두나무 테이블·패브릭 의자·좌측 창문·우측 후방 양개문·좌측 후방 벽난로) 설정 일치 확인</p>
+<p class="bullet">• 두 액션 컷 모두 <code>Both women keep their lips closed in silence</code>, <code>normal real-time speed</code>, <code>non_diegetic_music: N/A</code> 조건이 반영되었는지 확인</p>
+<p class="bullet">• <strong>music.md 음원 규율 검증</strong>:</p>
+<p class="bullet">• 폐기·반려 음원(<code>makjang-bgm-7</code>, <code>N01-FURY</code>, <code>F01-TABLE</code>) 미사용 확인</p>
+<p class="bullet">• 채택 음원(<code>T1-NEW</code>, <code>N04-EXPOSE</code>, <code>N03-ARGUMENT</code>, <code>N02-COLLISION</code>, <code>T2-REVELATION</code>, <code>T3-REVENGE-VOCAL</code> 등)만 사용되었는지 및 여성 보컬 곡(<code>T3-REVENGE-VOCAL</code>)이 대사 없는 구간에만 배치되었는지 확인</p></div></section><section class="candidate" id="B"><div class="label">자유 기획 B안</div><h2>B안 원문</h2><div class="manuscript"><h4>최종 기획안 — 〈시어머니는 홈캠이 꺼진 줄 알았다〉</h4>
+<p class="bullet">• 형식: 세로형 9:16 숏드라마</p>
+<p class="bullet">• 러닝타임: 약 90초</p>
+<p class="bullet">• 장르: 재벌가 막장극·증거 역전·응징</p>
+<p class="bullet">• 인물: 3명</p>
+<p class="bullet">• 장소: 재벌가 거실 겸 식당 1곳</p>
+<p class="bullet">• 핵심 후킹 문구: “새벽 2시 17분, 시어머니가 며느리 가방을 열었다.”</p>
+<p class="bullet">• 엔딩 카피: “사각지대라 믿은 순간까지, 진실은 남는다.”</p>
+<h5>제품 선정</h5>
+<p>가상 제품 <code>TRUE360 미니 홈캠</code></p>
+<p>핵심 기능은 세 가지만 노출합니다.</p>
+<p class="bullet">• 사람 감지 자동 회전</p>
+<p class="bullet">• 사건 영상 클라우드 자동 저장</p>
+<p class="bullet">• 앱에서 영상 확인 및 즉시 공유</p>
+<p>제품을 따로 설명하지 않고, 악역의 범행을 잡아내는 결정적 소품으로 사용합니다. 실제 광고주가 정해지면 브랜드명과 검증된 기능 표현만 교체하면 됩니다.</p>
+<h5>채택 클리셰</h5>
+<p class="bullet">• <code>MK-0299</code> 가족 식탁 공개재판</p>
+<p class="bullet">• <code>MK-0021</code> 이혼서류 투척</p>
+<p class="bullet">• <code>MK-0333</code> 식탁 물세례</p>
+<p class="bullet">• <code>MK-0335</code> 따귀 후 고개 고정</p>
+<p class="bullet">• <code>MK-0272</code> CCTV 사각지대 설계와 역이용</p>
+<p class="bullet">• <code>MK-0325</code> 숨겨 둔 복제본·클라우드 백업</p>
+<p class="bullet">• <code>MK-0346</code> 자동 재생 음성 폭로</p>
+<p class="bullet">• <code>MK-0412</code> 폭로 순간 배경음악 급정지</p>
+<p class="bullet">• <code>SD-002</code> 자기도 모르게 세부사항을 말해 범행 노출</p>
+<p class="bullet">• <code>MK-0331</code> 한 공간·한 증거로 완결되는 독립 쇼츠</p>
+<p>모든 반전은 ‘며느리의 지분을 빼앗으려는 시어머니’라는 하나의 욕망으로 묶습니다.</p>
+<h4>등장인물</h4>
+<p>한서아, 33세</p>
+<p>차분하지만 물러서지 않는 며느리. 생전 시아버지인 차 회장에게 회사 지분 12%와 현재 저택을 상속받았다.</p>
+<p>차화영, 59세</p>
+<p>시어머니이자 태성식품 회장 대행. 횡령한 돈을 메우려고 가보인 브로치를 팔고, 가짜를 며느리 가방에 넣었다.</p>
+<p>차민준, 36세</p>
+<p>서아의 남편. 어머니에게서 독립하지 못한 전략기획실장. 진실보다 자기 지위가 먼저다.</p>
+<h4>전체 시나리오</h4>
+<p>차화영은 가족 식탁에 가짜 브로치와 이혼합의서를 던진다. 며느리 서아가 가보를 훔쳤다며 경찰에 넘기지 않는 조건으로 이혼과 회사 지분 포기를 요구한다. 남편 민준도 서아에게 서명하라고 압박한다.</p>
+<p>서아가 브로치가 가짜라고 지적하자 화영은 물을 끼얹는다. 서아는 일부러 “어젯밤 홈캠은 현관만 보고 있었을 것”이라고 말한다. 화영은 흥분한 나머지 범행 시각과 가방 위치를 정확히 말해버린다.</p>
+<p>신형 홈캠은 사람의 움직임을 따라 회전하고 있었다. 앱 영상에는 화영이 가짜 브로치를 서아의 가방에 넣으며 지분 포기 계획을 말하는 모습이 담겨 있다. 화영은 전화기를 빼앗으려 하지만 영상은 이미 클라우드와 변호사·감사팀에 공유됐다.</p>
+<p>민준은 그제야 “가족끼리 해결하자”고 한다. 서아가 이를 거부하자 화영은 따귀를 때린다. 서아는 돌아간 얼굴을 잠시 고정한 뒤 홈캠을 바라본다.</p>
+<p>“방금 폭행까지, 잘 저장됐네요.”</p>
+<p>서아는 이혼은 받아들이지만 지분과 집은 내놓지 않겠다고 선언한다. 쫓겨날 줄 알았던 며느리가 도리어 모자를 저택에서 내보낸다.</p>
+<h4>완성 대본</h4>
+<div class="table-wrap"><table><thead><tr><th>시간</th><th>화면·연기</th><th>대사</th><th>음악·효과</th></tr></thead><tbody>
+<tr><td data-label="시간">00:00–00:03</td><td data-label="화면·연기">거실 선반 위 <code>TRUE360</code> 렌즈가 화영의 움직임을 따라 조용히 회전한다. 곧바로 브로치가 식탁 위에 떨어지는 익스트림 클로즈업.</td><td data-label="대사">화영: “이게 네 가방에서 나왔어.”</td><td data-label="음악·효과">브로치 타격음. <code>N04-EXPOSE</code> 시작.</td></tr>
+<tr><td data-label="시간">00:03–00:10</td><td data-label="화면·연기">화영이 서아 앞에 브로치를 밀어 놓는다. 민준은 서아의 눈을 피한다.</td><td data-label="대사">화영: “죽은 회장님 유품까지 훔쳐? 고아를 며느리로 들였더니 주인 행세를 해?”</td><td data-label="음악·효과">낮은 긴장음 상승.</td></tr>
+<tr><td data-label="시간">00:10–00:17</td><td data-label="화면·연기">화영이 이혼합의서를 서아 가슴 앞으로 던진다. ‘태성식품 지분 12% 포기’ 문구 클로즈업.</td><td data-label="대사">화영: “이혼하고 네 지분 전부 포기해. 그러면 경찰은 안 부르마.”</td><td data-label="음악·효과">서류가 식탁을 치는 소리.</td></tr>
+<tr><td data-label="시간">00:17–00:23</td><td data-label="화면·연기">민준이 서류를 서아 쪽으로 밀어준다.</td><td data-label="대사">민준: “서아야, 그냥 사인해. 어머니가 이 정도로 끝내주신다잖아.”</td><td data-label="음악·효과">음악 압박감 증가.</td></tr>
+<tr><td data-label="시간">00:23–00:30</td><td data-label="화면·연기">서아가 브로치 안쪽을 확인한다. 표정은 흔들리지 않는다.</td><td data-label="대사">서아: “아버님이 제게 주신 브로치엔 안쪽 흠집이 있었어요.”</td><td data-label="음악·효과">음악이 잠시 얇아진다.</td></tr>
+<tr><td data-label="시간">00:30–00:33</td><td data-label="화면·연기">서아가 브로치를 식탁에 내려놓는다.</td><td data-label="대사">서아: “이건 가짜네요. 원본, 파셨죠?”</td><td data-label="음악·효과">짧은 충격음.</td></tr>
+<tr><td data-label="시간">00:33–00:39</td><td data-label="화면·연기">화영이 잔을 쥔다. 잔을 자연스럽게 세운 상태에서 팔을 뻗으며 손목을 돌려 서아의 얼굴에 물을 한 번에 끼얹는다. 서아는 눈을 감고 상체를 뒤로 움찔한다.</td><td data-label="대사">화영: “증거도 없이 감히 누구를 도둑으로 몰아!”</td><td data-label="음악·효과">물 충격 순간 음악 절단. 물소리와 거친 숨만 남긴다.</td></tr>
+<tr><td data-label="시간">00:39–00:46</td><td data-label="화면·연기">물이 흐르는 얼굴로 서아가 천천히 화영을 본다.</td><td data-label="대사">서아: “증거라… 어젯밤 거실 홈캠은 현관만 보고 있었겠네요.”</td><td data-label="음악·효과">무음에 가까운 룸톤.</td></tr>
+<tr><td data-label="시간">00:46–00:54</td><td data-label="화면·연기">화영이 흥분해 식탁을 친다.</td><td data-label="대사">화영: “당연하지! 새벽 두 시 십칠 분엔 네 가방이 카메라 뒤쪽이었어. 아무것도 못 찍었—”</td><td data-label="음악·효과">마지막 음절에서 완전 정적.</td></tr>
+<tr><td data-label="시간">00:54–00:58</td><td data-label="화면·연기">화영의 표정이 굳는다. 서아가 젖은 머리카락을 넘긴다.</td><td data-label="대사">서아: “전 시간도, 가방 위치도 말한 적 없는데요.”</td><td data-label="음악·효과">낮은 반전 효과음.</td></tr>
+<tr><td data-label="시간">00:58–01:03</td><td data-label="화면·연기">서아가 휴대전화 앱을 연다. 화면 속 홈캠 렌즈가 화영을 따라 회전하는 영상.</td><td data-label="대사">서아: “그리고 이 신형, 사람을 따라 돌아가요.”</td><td data-label="음악·효과"><code>T2-REVELATION</code> 진입.</td></tr>
+<tr><td data-label="시간">01:03–01:12</td><td data-label="화면·연기">앱 영상 재생. 화영이 소파의 서아 가방에 브로치를 넣는다. 화면 구석에 <code>02:17 / 클라우드 저장 완료</code>.</td><td data-label="대사">영상 속 화영: “원본은 팔았어. 가짜를 서아 가방에 넣고 도둑으로 몰아. 지분 포기받으면 끝이야.”</td><td data-label="음악·효과">영상 음성은 또렷하게, 음악은 낮게 유지.</td></tr>
+<tr><td data-label="시간">01:12–01:17</td><td data-label="화면·연기">화영이 전화기를 낚아채려 하지만 서아가 한발 물러선다.</td><td data-label="대사">화영: “조작이야! 당장 지워!”</td><td data-label="음악·효과">의자 끌리는 소리.</td></tr>
+<tr><td data-label="시간">01:17–01:23</td><td data-label="화면·연기">서아가 화면의 공유 완료 표시를 보여준다.</td><td data-label="대사">서아: “원본은 클라우드에 저장됐어요. 변호사와 감사팀에도 이미 보냈고요.”</td><td data-label="음악·효과">업로드 완료 알림음.</td></tr>
+<tr><td data-label="시간">01:23–01:29</td><td data-label="화면·연기">민준이 황급히 서아 앞으로 다가온다.</td><td data-label="대사">민준: “서아야, 어머니가 순간 실수하신 거야. 가족끼리 조용히 해결하자.”</td><td data-label="음악·효과">음악이 다시 긴장감 있게 상승.</td></tr>
+<tr><td data-label="시간">01:29–01:34</td><td data-label="화면·연기">서아가 민준의 손을 뿌리친다.</td><td data-label="대사">서아: “날 경찰에 넘기려던 순간엔, 난 가족이 아니었잖아.”</td><td data-label="음악·효과">짧은 정적.</td></tr>
+<tr><td data-label="시간">01:34–01:40</td><td data-label="화면·연기">화영이 낮게 내렸던 오른손을 크게 휘두른다. 서아의 뺨을 지나 넓게 팔로스루. 서아의 고개와 어깨가 옆으로 꺾인다.</td><td data-label="대사">화영: “감히 내 아들 앞길을 막아?”</td><td data-label="음악·효과">날카로운 따귀 효과음과 옷깃 마찰음.</td></tr>
+<tr><td data-label="시간">01:40–01:45</td><td data-label="화면·연기">서아는 돌아간 얼굴을 잠시 고정한다. 천천히 눈만 움직여 선반의 홈캠을 본다. 렌즈가 화영 쪽으로 회전한다.</td><td data-label="대사">서아: “방금 폭행까지… 잘 저장됐네요.”</td><td data-label="음악·효과"><code>T2-REVELATION</code> 마무리.</td></tr>
+<tr><td data-label="시간">01:45–01:52</td><td data-label="화면·연기">서아가 이혼합의서를 화영과 민준 앞으로 되던진다.</td><td data-label="대사">서아: “이혼은 해드리죠. 하지만 지분 12퍼센트는 한 주도 못 가져가요.”</td><td data-label="음악·효과"><code>T3-REVENGE-VOCAL</code> 전주 시작.</td></tr>
+<tr><td data-label="시간">01:52–01:58</td><td data-label="화면·연기">서아가 식탁 상석에 앉는다. 화영과 민준을 차례로 바라본다.</td><td data-label="대사">서아: “그리고 두 분, 오늘 안에 나가세요. 이 집도 아버님이 제게 남기셨으니까.”</td><td data-label="음악·효과">보컬은 대사가 끝난 뒤 들어온다.</td></tr>
+<tr><td data-label="시간">01:58–02:02</td><td data-label="화면·연기">화영과 민준의 충격 표정. 홈캠 제품 히어로 샷과 앱의 <code>사건 영상 안전 저장</code> 화면.</td><td data-label="대사">자막: “사각지대라 믿은 순간까지, 진실은 남는다.”</td><td data-label="음악·효과"><code>T3-REVENGE-VOCAL</code> 엔딩 히트.</td></tr>
+</tbody></table></div>
+<h4>액션 촬영 지시</h4>
+<p>물세례는 정상 속도로 촬영합니다. 화영이 잔을 똑바로 든 상태에서 팔을 빠르게 뻗고 동시에 손목을 돌려, 열린 잔의 입구가 서아의 얼굴을 향하게 합니다. 물은 여러 번 흩뿌리지 않고 짧고 굵은 한 번의 물줄기로 나가야 합니다.</p>
+<p>따귀는 두 사람을 함께 담는 미디엄 와이드로 촬영합니다. 화영의 팔 전체와 서아가 고개를 돌릴 여유 공간을 프레임에 남깁니다. 손은 아래에서 출발해 어깨와 몸통 회전으로 넓게 지나가고, 얼굴을 지난 뒤에도 팔의 궤적을 끝까지 이어갑니다. 실제 접촉 없이 카메라 각도와 효과음으로 타격을 완성합니다.</p>
+<p>제품의 결정적 기능은 설명 대사보다 <code>렌즈 회전 → 앱 영상 → 클라우드 저장 완료</code>의 세 컷으로 이해되게 만드는 것이 핵심입니다.</p></div></section><section class="candidate" id="C"><div class="label">자유 기획 C안</div><h2>C안 원문</h2><div class="manuscript"><p>[맥미니] 참고자료 다섯 개를 모두 읽고 기획부터 완성 대본까지 작성했습니다. 1화 분량 약 90초이고, 기존 캐릭터 시트(엘라라·마리안느)와 응접실 배경을 그대로 쓸 수 있게 짰습니다.</p>
+<hr>
+<h3>「물로는 안 지워져요, 어머님」</h3>
+<h4>1. 클리셰 선택</h4>
+<p>숏드라마 사전 규칙(&quot;한 편에 핵심 장치 1개와 하위 비트 1개&quot;)에 맞춰 이렇게 나눴습니다.</p>
+<div class="table-wrap"><table><thead><tr><th>위계</th><th>클리셰</th><th>쓰는 방식</th></tr></thead><tbody>
+<tr><td data-label="위계"><strong>핵심 장치</strong></td><td data-label="클리셰">SD-002 연상 문답이 숨긴 친숙함을 드러내기</td><td data-label="쓰는 방식">제품을 &quot;모른다&quot;던 시어머니가, 며느리가 일부러 틀리게 말한 부분을 참지 못하고 고쳐 주다가 자기가 애용자라는 걸 들킴</td></tr>
+<tr><td data-label="위계"><strong>하위 비트</strong></td><td data-label="클리셰">MK-0333 식탁 물세례 (뒤집기: 맞은 사람이 태연함)</td><td data-label="쓰는 방식">물을 맞아도 화장이 안 지워짐. 이 장면이 그대로 제품 시연</td></tr>
+<tr><td data-label="위계">연출 태그</td><td data-label="클리셰">MK-0172 충격 순간 음악 끊기 · MK-0150 3초 무반응 · MK-0430 아수라장 속 실무자 · MK-0579 엔딩 프리즈</td><td data-label="쓰는 방식">템포와 웃음 조절</td></tr>
+<tr><td data-label="위계">엔딩 훅</td><td data-label="클리셰">MK-0006 절단 클리프행어 → 다음 화 핵심인 MK-0222 하녀가 실권자(익명 대주주형)</td><td data-label="쓰는 방식">며느리가 그 제품 개발자였다는 사실 공개</td></tr>
+</tbody></table></div>
+<p>참고로 SD-002는 사전에서 GPT 검토가 &quot;근거 부족, 보류&quot;로 분류한 항목입니다. 다만 구조가 단순하고 출연 3명·장소 1곳이라 제작비가 적게 들어서 핵심 장치로 골랐습니다.</p>
+<h4>2. 제품 선정</h4>
+<p><strong>워터프루프 쿠션 파운데이션</strong> (임시 가칭 「루미에르 아쿠아핏 쿠션」, 29,000원, 호수 5종, 무향)</p>
+<p class="bullet">• <strong>고른 이유:</strong> 물세례 클리셰를 그대로 제품 시연으로 쓸 수 있습니다. 물을 맞아도 안 무너지는 얼굴이 한 컷으로 증명되고, 시어머니와 며느리 사이 화장품 갈등은 막장 시청층에 익숙한 소재입니다.</p>
+<p class="bullet">• <strong>주의할 점:</strong> 실제 협찬 제품으로 바꿀 때는 &#x27;워터프루프·땀·피지 지속&#x27; 같은 문구가 그 제품의 실제 시험 근거와 맞아야 합니다(표시광고 위험). 유료 광고라면 &#x27;유료광고 포함&#x27; 표기도 필요합니다.</p>
+<h4>3. 등장인물</h4>
+<div class="table-wrap"><table><thead><tr><th>인물</th><th>설정</th><th>에셋</th></tr></thead><tbody>
+<tr><td data-label="인물"><strong>엘라라</strong></td><td data-label="설정">며느리, 20대 후반. 가난한 집 출신이라고 무시당하는데, 사실 이 쿠션의 개발자</td><td data-label="에셋">기존 <code>&lt;Picture 1&gt;</code> (에메랄드 드레스)</td></tr>
+<tr><td data-label="인물"><strong>마리안느</strong></td><td data-label="설정">시어머니, 60대. &quot;300만 원짜리 크림만 쓴다&quot;고 허세를 부리지만 실은 이 쿠션을 몰래 사재기하는 사람</td><td data-label="에셋">기존 <code>&lt;Picture 2&gt;</code> (버건디 드레스)</td></tr>
+<tr><td data-label="인물"><strong>오스틴</strong></td><td data-label="설정">집사. 아수라장 속에서도 재고 관리만 하는 실무자</td><td data-label="에셋"><strong>캐릭터 시트 새로 필요</strong></td></tr>
+</tbody></table></div>
+<h4>4. 시나리오 (전개 흐름)</h4>
+<p>1. <strong>훅:</strong> 시어머니가 며느리의 2만 9천 원짜리 쿠션을 들고 조롱합니다.</p>
+<p>2. <strong>물세례:</strong> &quot;싸구려 지워!&quot; 하며 물을 끼얹습니다. 그런데 화장이 그대로입니다.</p>
+<p>3. <strong>심기:</strong> 시어머니가 &quot;난 그런 거 몰라&quot;라고 부정합니다.</p>
+<p>4. <strong>전환:</strong> 며느리가 일부러 틀린 정보를 늘어놓습니다.</p>
+<p>5. <strong>회수:</strong> 시어머니가 반사적으로 정정하다가 &quot;오픈런을—&quot;에서 말이 멈춥니다. 집사가 재고 숫자로 쐐기를 박습니다.</p>
+<p>6. <strong>클리프행어:</strong> 며느리가 이 제품의 개발자라는 사실이 드러납니다.</p>
+<h4>5. 완성 대본 (약 92초)</h4>
+<p><strong>S1 — 0:00~0:06 | 응접실, 낮</strong></p>
+<p>호두나무 탁자 위에 쿠션 팩트가 하나 놓여 있습니다. 마리안느가 그걸 손끝으로 집어 들어 경멸하듯 내려다봅니다. 다른 손은 물잔을 만지작거립니다(물세례 복선).</p>
+<blockquote><strong>마리안느:</strong> 2만 9천 원? 이 집 며느리가 얼굴에 2만 9천 원짜리를 바르고 다녀?</blockquote>
+<p>🎵 N03-ARGUMENT 진입</p>
+<p><strong>S2 — 0:06~0:14 | 맞은편 투샷</strong></p>
+<blockquote><strong>엘라라:</strong> 가볍고 오래가서요. 어머님도 한번—</blockquote>
+<blockquote><strong>마리안느:</strong> (말을 자르며) 내 얼굴은 300만 원짜리 크림으로만 만든 얼굴이야. 그런 싸구려랑 섞지 마.</blockquote>
+<p><strong>S3 — 0:14~0:20 | 마리안느 클로즈업</strong></p>
+<p>잔을 쥔 손에 힘이 들어갑니다.</p>
+<blockquote><strong>마리안느:</strong> 당장 지워. 그 싸구려.</blockquote>
+<p><strong>S4 — 0:20~0:24 | 물세례 [AI 생성 액션 샷, 대사 없음]</strong></p>
+<p>마리안느가 잔의 물을 엘라라 얼굴에 끼얹습니다. 맞는 순간 줌인합니다.</p>
+<p>🎵 <strong>음악을 물이 닿기 직전에 끊고</strong> 물소리만 남깁니다.</p>
+<p><strong>S5 — 0:24~0:32 | 엘라라 클로즈업, 제품 시연 컷</strong></p>
+<p>3초 정적. 물방울이 흘러내려도 피부 표현은 그대로입니다. 엘라라가 손수건으로 볼을 톡톡 두드립니다. 이어서 손수건을 익스트림 클로즈업으로 보여 줍니다. 아무것도 묻어나지 않습니다.</p>
+<blockquote><strong>엘라라:</strong> (담담하게) 안 지워져요, 어머님. 워터프루프라서.</blockquote>
+<p><strong>S6 — 0:32~0:38 | 마리안느</strong></p>
+<p>빈 잔을 내려놓고 턱을 치켜듭니다.</p>
+<blockquote><strong>마리안느:</strong> 흥. 난 그런 거 몰라. 알고 싶지도 않고.</blockquote>
+<p>🎵 N04-EXPOSE 낮게 진입</p>
+<p><strong>S7 — 0:38~0:50 | 엘라라 (함정 놓기)</strong></p>
+<p>일부러 아쉬운 척 팩트를 만지작거립니다.</p>
+<blockquote><strong>엘라라:</strong> 그러시겠죠. 사실 이거 별로예요. 땀 나면 금방 무너지고, 호수도 딱 두 개뿐이고, 장미향이 너무 진해서—</blockquote>
+<p><strong>S8 — 0:50~1:02 | 마리안느 (반사적 정정)</strong></p>
+<p>점점 빨라지는 대사. 카메라는 천천히 다가갑니다.</p>
+<blockquote><strong>마리안느:</strong> 무슨 소리야! 땀이고 물이고 피지고 다 버텨! 호수는 다섯 개고, 완전 무향이야! 21호 웜은 맨날 품절이라 내가 새벽부터 오픈런을—</blockquote>
+<p>(그 자리에서 입이 멈춥니다)</p>
+<p><strong>S9 — 1:02~1:06 | 정적 투샷</strong></p>
+<p>🎵 <strong>음악 급정지.</strong> 벽시계 초침 소리만 들립니다. 두 사람 다 3초 동안 아무 반응이 없습니다.</p>
+<p><strong>S10 — 1:06~1:12 | 문가의 오스틴</strong></p>
+<p>태블릿을 보며 무심하게 말합니다.</p>
+<blockquote><strong>오스틴:</strong> 사모님. 화장대 셋째 서랍 재고, 열한 개 남았습니다.</blockquote>
+<p>마리안느가 눈을 질끈 감습니다.</p>
+<p><strong>S11 — 1:12~1:18 | 수습 시도</strong></p>
+<blockquote><strong>마리안느:</strong> 그, 그건… 하녀들 주려고 산 거야!</blockquote>
+<blockquote><strong>오스틴:</strong> 21호 웜만 열한 개입니다, 사모님.</blockquote>
+<p><strong>S12 — 1:18~1:26 | 반전</strong></p>
+<p>오스틴이 잡지를 탁자에 내려놓습니다. 표지 문구는 〈품절 대란 쿠션, 개발자를 만나다〉이고, 표지 사진은 엘라라입니다.</p>
+<p>🎵 T2-REVELATION 진입</p>
+<blockquote><strong>마리안느:</strong> (잡지를 보고, 엘라라를 보고) …너, 너였어?</blockquote>
+<p><strong>S13 — 1:26~1:32 | 엔딩</strong></p>
+<p>엘라라가 젖은 머리를 쓸어 넘기며 일어서고, 미소 짓습니다.</p>
+<blockquote><strong>엘라라:</strong> 어머님. 21호 웜 재입고, 제가 결정해요.</blockquote>
+<p>마리안느의 굳은 얼굴에서 화면이 멈춥니다(엔딩 프리즈). 🎵 T2-REVELATION을 짧게 줄여서 끝냅니다.</p>
+<h4>6. 배경음악 배치 (채택곡 8곡 안에서만 사용)</h4>
+<div class="table-wrap"><table><thead><tr><th>구간</th><th>음원</th></tr></thead><tbody>
+<tr><td data-label="구간">S1~S3 조롱·말싸움</td><td data-label="음원">N03-ARGUMENT</td></tr>
+<tr><td data-label="구간">S4~S5 물세례</td><td data-label="음원">음악 없음 (물소리와 정적만)</td></tr>
+<tr><td data-label="구간">S6~S8 정정 공방</td><td data-label="음원">N04-EXPOSE</td></tr>
+<tr><td data-label="구간">S9~S11 들통·집사</td><td data-label="음원">음악 없음 (초침 소리)</td></tr>
+<tr><td data-label="구간">S12~S13 정체 공개</td><td data-label="음원">T2-REVELATION</td></tr>
+</tbody></table></div>
+<p>폐기된 N01-FURY, F01-TABLE, 기존 bgm-7은 쓰지 않았습니다. T3-REVENGE-VOCAL은 이번 화에 복수 선언이 없어서 남겨 두었습니다.</p>
+<h4>7. AI 생성 프롬프트</h4>
+<p>참고 프롬프트 형식에 맞춰 영어로 썼습니다. 원본은 엘라라가 던지는 쪽이었는데, 이번에는 <strong>던지는 사람과 맞는 사람을 바꿨습니다.</strong></p>
+<p><strong>S4 물세례</strong></p>
+<pre>&lt;Picture 1&gt; is the character identity and costume reference for the adult woman in the emerald dress receiving the splash. &lt;Picture 2&gt; is the character identity and costume reference for the mature adult woman in the burgundy dress throwing the water. &lt;Picture 3&gt; is the environment reference for the lavish aristocratic drawing room. Both women keep their lips closed in silence.
+
+A high-tension Korean Makjang drama scene played entirely at normal real-time speed. The mature woman in burgundy, seated at the elegant walnut table, furiously throws the contents of her glass into the younger woman&#x27;s face. She begins holding the glass naturally upright. As her forearm rapidly extends toward the younger woman, her wrist simultaneously rotates the glass forward until its open rim faces the younger woman&#x27;s face and its base points back toward the thrower. The glass is visibly tipped toward the victim at the exact instant the water leaves. All the water exits through the open rim in one short, forceful broad splash aimed at the face.
+
+The water strikes the younger woman abruptly like a slap. At the instant of impact she squeezes her eyes shut and sharply flinches her head and upper body backward and slightly sideways. Her hair jolts with the sudden recoil. Afterward she slowly opens her eyes and stays calm and composed as water runs down. Her foundation and makeup remain completely intact, with no streaks, smudges or running color, only clear droplets beading on her skin. The thrower lowers the emptied glass, her angry expression beginning to falter. Cinematic lighting, sharp camera zoom-in on impact. The throw, impact and recoil all happen rapidly at natural speed.</pre>
+<p><strong>S5 손수건 시연 컷</strong></p>
+<pre>&lt;Picture 1&gt; is the character identity and costume reference for the adult woman in the emerald dress. &lt;Picture 3&gt; is the environment reference. Photographic live-action close-up at normal speed. Her face and hair are wet, clear water droplets on flawless, unchanged makeup. She calmly presses a clean white handkerchief to her cheek twice, then lowers it into frame toward the camera: the white fabric shows only damp water marks, no foundation residue. She keeps her lips closed. Soft daylight from the left window.</pre>
+<h4>8. 제작 메모</h4>
+<p class="bullet">• <strong>따귀 프롬프트는 이번 화에 쓰지 않았습니다.</strong> 물세례가 제품 시연과 바로 이어지는 하위 비트라서, 비트를 하나만 쓴다는 규칙에 맞춰 이쪽을 골랐습니다. 2화에서 시어머니가 판이 뒤집힌 데 격분해 손을 드는 장면에 쓸 수 있습니다.</p>
+<p class="bullet">• <strong>집사 오스틴은 캐릭터 시트를 새로 만들어야 합니다.</strong> 출연을 두 명으로 줄이고 싶다면 S10~S11의 정정 대사를 마리안느의 혼잣말 실수로 바꾸면 됩니다.</p>
+<p class="bullet">• <strong>2화 훅 후보:</strong> 마리안느가 300만 원짜리 크림 병을 열어 보니 그 안에 이 쿠션의 리필이 들어 있습니다. 그리고 정체가 드러난 엘라라가 시댁 회사의 대주주로 등장합니다(MK-0222).</p></div></section><footer><h2>어느 기획을 더 보고 싶나요?</h2><p>텔레그램에서 A/B/C 중 끌리는 안과 이유를 알려 주세요. 전부 아쉽다면 그렇게 말씀하셔도 됩니다. 선택 후 모델을 공개할 수 있습니다.</p><p class="meta">이번 작업은 글쓰기 비교만 진행했습니다. 영상·음성 생성, 실물 제품 검증, 실제 발화 시간 측정, 업로드 큐 등록은 하지 않았습니다. 모델 정답표와 실행 로그는 이 공개 페이지에 넣지 않았습니다.</p></footer></main></body></html>
